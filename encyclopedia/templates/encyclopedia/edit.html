@@ -1,0 +1,22 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Edit
+{% endblock %}
+
+{% block body %}
+    
+
+    <div style="padding-left: 10px;" >
+        <h1>Edit entry {{ title }}</h1>
+        <form action="{% url 'edit' %}" method="post" style="height:70vh; width: 60vw; display:flex; flex-direction: column; align-items: baseline;">
+            {% csrf_token %}            
+            {{ content_to_edit }} 
+            <input type="submit" value="Submit Changes" >        
+        </form>
+        <a href="{% url 'index' %}">Return</a>
+    </div>
+
+    
+
+{% endblock %}

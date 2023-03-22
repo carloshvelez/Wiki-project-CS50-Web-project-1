@@ -1,0 +1,14 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{title}}
+
+
+{% endblock %}
+
+{% block body %}
+    {{text|safe}} <!--se utiliza el filtro safe (|safe), para que django lo interprete como html, y escape el código html y se muestre como texto plano-->
+
+    <a href="{% url 'edit' %}?title={{ title }}">Edit</a>
+
+{% endblock %}

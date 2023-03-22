@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>{{ title }}</h1>
+    <h5>{{ subtitle }}</h5>
+
+    <ul>
+        {% for entry in entries %}
+            <li><a href="{% url 'view_entry' entry%}">{{ entry }}</li></a> <!--El argumento "title", que necesita la función entry, se pasó en la url-->
+        {% endfor %}
+    </ul>
+
+{% endblock %}

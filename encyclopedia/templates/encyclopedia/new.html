@@ -1,0 +1,27 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create
+{% endblock %}
+
+{% block body %}
+    
+
+    <div style="padding-left: 10px;" >
+        <h1>Create a new entry</h1>
+        <form action="{% url 'new' %}" method="post" style="height:70vh; width: 60vw; display:flex; flex-direction: column; align-items: baseline;">
+            
+            {% csrf_token %}
+            {{ new_page }}
+        
+            
+            <input type="submit" value="Add entry" >        
+        </form>
+        <a href="{% url 'index' %}">Return</a>
+    </div>
+
+    
+
+{% endblock %}
+
+
